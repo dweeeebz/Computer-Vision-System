@@ -11,9 +11,9 @@ def get_prediction():
     # Text settings
     font = cv2.FONT_HERSHEY_SIMPLEX
     center_of_frame = (50, 50)
-    fontScale = 2
+    fontScale = 1
     fontColor = (255, 255, 255)
-    thickness = 5
+    thickness = 2
     lineType = 2
     print(f"Get ready!")
     start = time.time()
@@ -28,7 +28,7 @@ def get_prediction():
         prediction = model.predict(data)
         # Prints countdown in frames
         cv2.putText(frame,
-            'Countdown in {:0.2f}s'.format((time.time())-start, frame),center_of_frame,
+            'On the count of 5 {:0.1f}s'.format((time.time())-start, frame),center_of_frame,
             font,
             fontScale,
             fontColor,
